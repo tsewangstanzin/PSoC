@@ -39,8 +39,7 @@ int profiling(int destination)
     speed.Compute();
     pwmOut(output );
     if (counting  ) {
-      pos[p] = encoder0Pos;
-      if (p < 999) p++;
+      encoder_count()
       else counting = false;
     }
   }
