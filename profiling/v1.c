@@ -1,5 +1,5 @@
 
-void profiling(int destination)
+int profiling(int destination)
  { 
   int distance =   destination - setpoint; 
   int finalPoint = setpoint + distance;
@@ -46,4 +46,5 @@ void profiling(int destination)
   }
   int Error=encoder0Pos - covered;
   target1 = covered;
+  return target1;
 }
