@@ -31,12 +31,12 @@ void profiling(int destination)
     t += dt;
     if (t < t1) spd += da; else if (t >= t2) spd -= da;
     if ( dirPos ) covered += spd * dt; else covered -= spd * dt; // calculate new target position
-    //vel =  encoder0Pos - input;
+    vel =  encoder0Pos - input;
     input = encoder0Pos;
     setpoint = covered;
     while(!myPID.Compute()); // Wait untill PID computes
     setspeed = output;
-    //speed.Compute();
+    speed.Compute();
     pwmOut(output );
     if (counting  ) {
       pos[p] = encoder0Pos;
